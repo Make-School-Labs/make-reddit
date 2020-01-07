@@ -6,14 +6,18 @@ function upvote(elem, id) {
       /* If post is already upvoted, undo the upvote */
       updateVotes(numVotesElem, -1)
       voteBox.classList.remove("upvote");
-      fetch(`vote/none/${id}`, {method: 'POST'});
+      fetch(`vote/none/${id}`, {method: 'POST'}).then((response) => {
+        console.log("removed upvote, got status " + response.status);
+      });
   } else {
       /* Otherwise, check if post has been downvoted before changing # votes */
       const isDownvoted = voteBox.classList.contains("downvote");
       updateVotes(numVotesElem, isDownvoted ? 2 : 1);
       voteBox.classList.remove("downvote");
       voteBox.classList.add("upvote");
-      fetch(`vote/up/${id}`, {method: 'POST'});
+      fetch(`vote/up/${id}`, {method: 'POST'}).then((response) => {
+        console.log("removed upvote, got status " + response.status);
+      });
   }
 }
 
