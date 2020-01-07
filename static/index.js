@@ -16,7 +16,7 @@ function upvote(elem, id) {
       voteBox.classList.remove("downvote");
       voteBox.classList.add("upvote");
       fetch(`vote/up/${id}`, {method: 'POST'}).then((response) => {
-        console.log("removed upvote, got status " + response.status);
+        console.log("added upvote, got status " + response.status);
       });
   }
 }

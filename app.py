@@ -27,7 +27,6 @@ def detail(post_id):
 def vote(vote_type, post_id):
   print("Voting " + vote_type + " on " + post_id)
   post = post_collection.find_one({'_id': ObjectId(post_id)})
-  print(post)
 
   if vote_type == 'up':
     # Modify the post to add the user's name to the post's 'upvotes' list
