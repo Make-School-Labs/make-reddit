@@ -24,7 +24,7 @@ def detail(post_id):
 
 
 @app.route('/vote/<vote_type>/<post_id>', methods=['POST'])
-def upvote(vote_type, post_id):
+def vote(vote_type, post_id):
   print("Voting " + vote_type + " on " + post_id)
   post = post_collection.find_one({'_id': ObjectId(post_id)})
   print(post)

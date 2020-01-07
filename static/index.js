@@ -39,7 +39,8 @@ function downvote(elem, id) {
     voteBox.classList.add("downvote");
     
     /*
-     * TODO: Make a POST request to the 'vote/down' endpoint to add a downvote
+     * TODO: Make a POST request using 'fetch()' to the 'vote/down' endpoint to 
+     * add a downvote
      */
     
   }
